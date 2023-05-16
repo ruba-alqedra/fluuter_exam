@@ -45,13 +45,21 @@ class OnBoardingScreen extends StatelessWidget {
                 color: const Color(0xFF7B7B7B),
               ),
             ),
-            const Spacer(),
+            const SizedBox(
+              height: 150,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
                   onPressed: () {},
-                  child: const Text('Skip'),
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                    ),
+                  ),
                 ),
                 Row(
                   children: const [
@@ -76,8 +84,16 @@ class OnBoardingScreen extends StatelessWidget {
                   ],
                 ),
                 TextButton(
-                  onPressed: () {},
-                  child: Text('Next'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign_up');
+                  },
+                  child: const Text(
+                    'Next',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                    ),
+                  ),
                 ),
               ],
             )

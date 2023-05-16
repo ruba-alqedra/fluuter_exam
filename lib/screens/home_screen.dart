@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_exam/screens/tab1.dart';
+import 'package:flutter_exam/screens/tab2.dart';
+import 'package:flutter_exam/screens/tab3.dart';
 
-import '../widgets/my_card.dart';
+import '../models/bottom_nav.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -8,6 +11,12 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
+List<BottomNavigation> buttomNav = <BottomNavigation>[
+  BottomNavigation(const Tab1()),
+  BottomNavigation(const Tab2()),
+  BottomNavigation(const Tab3()),
+];
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
@@ -23,36 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
           color: Color(0xFF8D0000),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: const [
-            MyCard(
-                image: 'images/hqdefault.png',
-                text1: 'Beef,& Vegetable Rice',
-                text2: '\nRice with some vegetable rolled\n'
-                    'in a “pita” bread with some of the\n salty pickles.\n\n',
-                time: 'Delivery Time: 1:00 -3:00pm'),
-            MyCard(
-                image: 'images/pizza.png',
-                text1: 'Pizza with Vegatables',
-                text2:
-                    '\nHuge pie topped with mozzarella\n cheese, mushrooms, onion, tomato,\n delicious pizza \n',
-                time: '\nDelivery Time: 10:00 -2:00pm'),
-            MyCard(
-                image: 'images/black_forest_cake.png',
-                text1: 'Forest Cake',
-                text2:
-                    '\nLorem ipsum dolor sit amet,\n consetetur sadipscing elitr, sed\n\n',
-                time: 'Delivery Time: 1:00 -3:00pm'),
-            MyCard(
-                image: 'images/imag4.png',
-                text1: 'Beef,& Vegetable Rice',
-                text2: '\nRice with some vegetable rolled\n'
-                    'in a “pita” bread with some of the\n salty pickles.\n',
-                time: 'Delivery Time: 1:00 -3:00pm'),
-          ],
-        ),
-      ),
+      body: buttomNav.elementAt(currentIndex).screen,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         unselectedItemColor: Colors.black26,

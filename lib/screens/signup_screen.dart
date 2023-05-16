@@ -61,7 +61,9 @@ class SignupScreen extends StatelessWidget {
                 fixedSize: const Size(325, 48),
                 backgroundColor: const Color(0xFF8D0000),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/home_screen');
+              },
               child: Text(
                 'Signup',
                 style: GoogleFonts.raleway(
