@@ -6,7 +6,7 @@ class Tab3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
+      color: Colors.yellow.shade100,
     );
   }
 }
