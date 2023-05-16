@@ -54,6 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
         unselectedItemColor: Colors.black26,
         selectedItemColor: const Color(0xff8D0000),
         selectedIconTheme: const IconThemeData(
